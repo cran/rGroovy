@@ -1,0 +1,12 @@
+eaa097b391275dbf87d8fcb59493138d *DESCRIPTION
+ab65aec9c63ca5d9da63ed6b90ff3090 *INDEX
+ad04f8384c94b224fb4828fcf5862572 *NAMESPACE
+ef69a34264b722bc67e4cc871556ef2c *NEWS
+6bc22f9abd13c19f7a3dfa40ae26a5ca *R/rGroovy.R
+d81811abf2e3823a7969ecbaa12469f8 *man/About.Rd
+2e69248f92bec6682c7aebeabbfdec24 *man/Evaluate.Rd
+5c65acc5ab2aaafd1b233ce3f562f34f *man/Execute.Rd
+a8158253ddba4e7f246ae14ed754389e *man/Initialize.Rd
+a17a68f3221bb54b312cd3a7b0f0c7da *man/rGroovy.Rd
+102d515d5ae0d305d17a104040b1f85d *tests/test_all.R
+1254f84707734f1fa12529200157a87c *tests/testthat/test_rGroovy.R

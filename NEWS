@@ -1,0 +1,7 @@
+Package rGroovy
+=========================
+Version: 0.85 [2015-08-01]
+o  Initial development release.
+Version: 1.0 [2015-10-30]
+o  Package renamed to rGroovy.
+o  Package released on CRAN.
