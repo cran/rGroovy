@@ -10,6 +10,10 @@
 #' is dynamically compiled to Java Virtual Machine (JVM) bytecode, and interoperates with other Java code and
 #' libraries."
 #'
+#' One powerful feature this package delivers is that it allows the developer to enhance their R script with Java and
+#' Groovy code without necessarily being required to ship jars (see Grape, below). A simple example is included here
+#' and advanced examples can be found at the project's homepage.
+#'
 #' @examples
 #'  \dontrun{
 #' #
@@ -30,7 +34,10 @@
 #' Execute (groovyScript="print 'Hello world!'")
 #' }
 #'
-#' @seealso \href{http://groovy.codehaus.org/}{Groovy}
+#' @seealso \href{https://coherentlogic.com/wordpress/middleware-development/rgroovy/?source=cran}{rGroovy}
+#' @seealso \href{https://en.wikipedia.org/wiki/Groovy_(programming_language)}{Groovy (programming language)}
+#' @seealso \href{http://groovy-lang.org/}{Groovy}
+#' @seealso \href{http://docs.groovy-lang.org/latest/html/documentation/grape.html}{Grape}
 #' @seealso \href{http://www.groovy-lang.org/indy.html}{Invoke Dynamic}
 #'
 #' @import rJava
@@ -63,6 +70,25 @@ NULL
     groovyJars <- getOption("GROOVY_JARS")
 
     .jpackage(pkgname, lib.loc = libname, morePaths = groovyJars)
+
+    runtime_version <- .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
+
+    CheckJRERuntimeVersion (runtime_version)
+}
+
+#' Function verifies the existing JRE version is greater than or equal to 1.7 and, if it is not, invokes the stop
+#' function with a message.
+#'
+#' @param runtime_version For example, "1.7".
+#'
+CheckJRERuntimeVersion <- function (runtime_version) {
+
+    if(substr(runtime_version, 1L, 1L) == "1") {
+
+        jre_version <- as.numeric(paste0(strsplit(runtime_version, "[.]")[[1L]][1:2], collapse = "."))
+
+        if(jre_version < 1.7) stop (paste ("Java 7, or greater, is required for this package; jre_version: ", jre_version, ""))
+    }
 }
 
 #' Funtion does nothing.
@@ -88,10 +114,7 @@ Initialize <- function (binding = NULL) {
 
     if (!is.null (.rGroovyAPI.env$groovyShell)) {
         warning (
-            paste (
-                "Initialize has been invoked more than once -- are you sure ",
-                "this is what you intended to do?"
-            )
+            "Initialize has been invoked more than once -- are you sure this is what you intended to do?"
         )
     }
 
@@ -201,19 +224,21 @@ Execute <- function (
 #'
 About <- function () {
     cat (
-        " ***********************************************************\n",
-        "***                                                     ***\n",
-        "***            Welcome to the rGroovy Package           ***\n",
-        "***                                                     ***\n",
-        "***                    version 1.0.                     ***\n",
-        "***                                                     ***\n",
-        "***                Follow us on LinkedIn:               ***\n",
-        "***                                                     ***\n",
-        "***       https://www.linkedin.com/company/229316       ***\n",
-        "***                                                     ***\n",
-        "***                Follow us on Twitter:                ***\n",
-        "***                                                     ***\n",
-        "***        https://twitter.com/CoherentLogicCo          ***\n",
-        "***                                                     ***\n",
-        "***********************************************************\n")
+        "***************************************************************************************************\n",
+        "***                                                                                             ***\n",
+        "***                          Welcome to the rGroovy Package version 1.2.                        ***\n",
+        "***                                                                                             ***\n",
+        "***            More information pertaining to the rGroovy package can be found here:            ***\n",
+        "***                                                                                             ***\n",
+        "***  https://coherentlogic.com/wordpress/middleware-development/rgroovy?source=rGroovyPackage   ***\n",
+        "***                                                                                             ***\n",
+        "***                         Keep in touch by following us on LinkedIn:                          ***\n",
+        "***                                                                                             ***\n",
+        "***                          https://www.linkedin.com/company/229316                            ***\n",
+        "***                                                                                             ***\n",
+        "***                                    or on Twitter:                                           ***\n",
+        "***                                                                                             ***\n",
+        "***                           https://twitter.com/CoherentLogicCo                               ***\n",
+        "***                                                                                             ***\n",
+        "***************************************************************************************************\n")
 }

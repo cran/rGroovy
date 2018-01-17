@@ -1,4 +1,4 @@
 Initialize               Instantiates the GroovyShell using the binding provided.
 Evaluate                 Evaluates the given Groovy script.
-Execute                  Executes the given Groovy script using the spcified variables.
-About                    Function prints some information about this plugin.
+Execute                  Executes the given Groovy script using the specified variables.
+About                    Prints some information about this plugin.
