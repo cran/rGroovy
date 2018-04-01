@@ -83,7 +83,7 @@ NULL
 #'
 CheckJRERuntimeVersion <- function (runtime_version) {
 
-    if(substr(runtime_version, 1L, 1L) == "1") {
+    if(substr(runtime_version, 1L, 2L) == "1.") {
 
         jre_version <- as.numeric(paste0(strsplit(runtime_version, "[.]")[[1L]][1:2], collapse = "."))
 
@@ -226,7 +226,7 @@ About <- function () {
     cat (
         "***************************************************************************************************\n",
         "***                                                                                             ***\n",
-        "***                          Welcome to the rGroovy Package version 1.2.                        ***\n",
+        "***                          Welcome to the rGroovy Package version 1.3.                        ***\n",
         "***                                                                                             ***\n",
         "***            More information pertaining to the rGroovy package can be found here:            ***\n",
         "***                                                                                             ***\n",

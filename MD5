@@ -1,8 +1,8 @@
-6d9fde920e8c082497bf3fcdaeba5966 *DESCRIPTION
+e27a8fc46ececc6f7729996bdb6c1f9e *DESCRIPTION
 ce2c0d60af2ca90de8f1e3f45b30e395 *INDEX
 6a795aa1c829f0079808eb9b319b1b1b *NAMESPACE
-3a08ab67a27aae452a55fd8206e93911 *NEWS
-dc1a7f54022b673b345d0486e7721498 *R/rGroovy.R
+0321a564e0bf516ed09361b70a6e3ba5 *NEWS
+41918bed0649e90110700ac47e1ff652 *R/rGroovy.R
 a739acacbf9c21b8a3f371771f42bc19 *man/About.Rd
 0aff1ea5d2fb894c51b6fab9c2f847b0 *man/CheckJRERuntimeVersion.Rd
 5ae781a6d0b84d32e6445ba34b5c87d6 *man/Evaluate.Rd
@@ -10,4 +10,4 @@ a739acacbf9c21b8a3f371771f42bc19 *man/About.Rd
 3a26652d0d9595f0947a225c27a7db4d *man/Initialize.Rd
 d7af01a80bf3017b7eddca86ad1e9e39 *man/rGroovy.Rd
 4bdc3bac06d98ae961ff72e43062f75f *tests/testthat.R
-727901ce8028b143a7e1ca6c0ff69b33 *tests/testthat/test_rGroovy.R
+c9fd3452810932924e5d73b23c660342 *tests/testthat/test_rGroovy.R

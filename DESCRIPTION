@@ -1,8 +1,8 @@
 Package: rGroovy
 Type: Package
 Title: Groovy Language Integration
-Version: 1.2
-Date: 2018-01-15
+Version: 1.3
+Date: 2018-04-01
 Author: Thomas P. Fuller <thomas.fuller@coherentlogic.com>
 Maintainer: Thomas P. Fuller <thomas.fuller@coherentlogic.com>
 Description: Integrates the Groovy scripting language with the R Project for Statistical Computing.
@@ -19,5 +19,5 @@ Repository: CRAN
 Archs: i386, x64
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-01-17 04:04:52 UTC; thospfuller
-Date/Publication: 2018-01-17 04:20:12 UTC
+Packaged: 2018-04-01 12:19:59 UTC; thospfuller
+Date/Publication: 2018-04-01 12:29:43 UTC

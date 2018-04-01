@@ -106,6 +106,19 @@ test_that(
 
         expect_error(rGroovy:::CheckJRERuntimeVersion("1.8"), NA)
         expect_error(rGroovy:::CheckJRERuntimeVersion("1.9"), NA)
+        #
+        # For Java 10 the following:
+        #
+        # runtime_version <- .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
+        #
+        # returns:
+        #
+        #   [1] "10+46"
+        #
+        expect_error(rGroovy:::CheckJRERuntimeVersion("10"), NA)
+        expect_error(rGroovy:::CheckJRERuntimeVersion("10+46"), NA)
+        expect_error(rGroovy:::CheckJRERuntimeVersion("11"), NA)
+        expect_error(rGroovy:::CheckJRERuntimeVersion("11+46"), NA)
     }
 )
 
